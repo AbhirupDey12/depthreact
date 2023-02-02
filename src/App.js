@@ -8,6 +8,12 @@ import FunctionClick from "./components/FunctionClick";
 import ClassClick from "./components/ClassClick";
 import EventBind from "./components/EventBind";
 import ParentComponent from "./ParentComponent";
+import UserGreeting from "./components/UserGreeting";
+import NameList from "./components/NameList";
+import Stylesheet from "./components/Stylesheet";
+import Inline from "./components/Inline";
+import './appStyles.css' ;
+import styles from './appStyles.module.css' ;
 
 class App extends React.Component {
 
@@ -18,7 +24,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <ParentComponent />
+        {/* <h1 className="error" >Error</h1> */}
+        {/* <h1 className= {styles.sucess} > Success </h1> */}
+        {/* <Inline /> */}
+        {/* <Stylesheet primary = {true} /> */}
+        {/* <NameList /> */}
+        {/* <UserGreeting /> */}
+        {/* <ParentComponent /> */}
         {/* <EventBind /> */}
         {/* <FunctionClick /> */}
         {/* <ClassClick /> */}
@@ -42,7 +54,7 @@ class App extends React.Component {
 
 export default App;
 
-
+// I love ritik sir and I can go to any level to make him proud of me...
 
 
 
