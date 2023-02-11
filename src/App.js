@@ -1,12 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import Header from "./component/Header";
+import './App.css';
+import Movie from "./component/Movie";
+import MovieData from './component/movie.json'
 
 export default function App() {
 
   return (
-    
-    <h1>
-      Hello world
-    </h1>
+
+    <div className="App">
+      <Header />
+      <div className="main">
+        {
+          MovieData.map((ele, index) => {
+            return (
+              <Movie
+                title={ele.Title}
+                poster = {ele.Images[1]}
+                year = {ele.Year}
+              />
+            )
+          })
+        }
+      </div>
+    </div>
 
   );
 

@@ -1,0 +1,49 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+.App {
+     text-align: center;
+     background-color: white;
+     min-height: 100vh;
+}
+
+.header {
+     background-color: rgb(75, 27, 187);
+     padding: 8px;
+     font-weight: bold;
+     color: white;
+}
+
+.main {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     padding: 1rem;
+     gap: 1rem;
+}
+
+.movie {
+     background-color: rgba(128, 128, 128, 0.352);
+     color: black;
+     border: 1px solid gray;
+     padding: 10px;
+     max-width: 23vw;
+     /* max-height: 25vh; */
+     min-height: 20vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+     font-weight: bold;
+     border-radius: 1rem;
+}
+
+.movie img {
+     width: 100%;
+     /* height: 100%; */
+     object-fit: cover;
+     border-radius: 10px;
+}
