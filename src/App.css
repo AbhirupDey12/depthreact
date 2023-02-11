@@ -2,6 +2,7 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
+     font-family: sans-serif;
 }
 
 .App {
@@ -57,4 +58,19 @@
      text-align: center;
      /* border: 1px solid black; */
      margin: 1rem 0;
+}
+
+.data {
+     margin-top: 1rem;
+     width: 80%;
+     border-radius: 1rem;
+}
+
+.data_val {
+     display: flex;
+     justify-content: space-between;
+     background-color: aqua;
+     padding: 1rem;
+     margin-top: 0.5rem;
+     align-items: center;
 }
