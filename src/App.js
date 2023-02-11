@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react";
-import Header from "./component/Header";
 import './App.css';
-import Movie from "./component/Movie";
-import MovieData from './component/movie.json'
+import Header from "./component/Header";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import AddIcon from '@mui/icons-material/Add';
 
 export default function App() {
 
@@ -10,28 +12,77 @@ export default function App() {
 
     <div className="App">
       <Header />
-      <div className="main">
-        {
-          MovieData.map((ele, index) => {
-            return (
-              <Movie
-                title={ele.Title}
-                poster = {ele.Images[1]}
-                year = {ele.Year}
-              />
-            )
-          })
-        }
+
+      <div className="form">
+        <Stack spacing={2} direction="row">
+          <TextField id="outlined-basic" label="Name" variant="outlined" />
+          <TextField id="outlined-basic" label="Email" variant="outlined" />
+          <Button color="success" variant="contained" color = "error" >
+              <AddIcon />
+          </Button>
+        </Stack>
       </div>
+
     </div>
-
   );
-
 };
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <Header />
+<div className="main">
+  {
+    MovieData.map((ele, index) => {
+      return (
+        <Movie
+          title={ele.Title}
+          poster = {ele.Images[1]}
+          year = {ele.Year}
+        />
+      )
+    })
+  }
+</div> */}
 
 
 

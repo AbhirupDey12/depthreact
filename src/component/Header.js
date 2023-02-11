@@ -4,7 +4,7 @@ function Header() {
      return (
           <div className='header'>
                <h1>
-                    Movies Review
+                    Record Keeping App
                </h1>
           </div>
      )
