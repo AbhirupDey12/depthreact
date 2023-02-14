@@ -23,8 +23,9 @@
 }
 
 .email_box ,
-.passwords_box {
+.password_box {
      width: 100%;
+     text-align: left;
 }
 
 .email_box input,

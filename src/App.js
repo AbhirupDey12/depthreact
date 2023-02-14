@@ -5,31 +5,35 @@
 // import Insta from "./component/Insta";
 // import Mail from "./component/Mail";
 // import UserDetails from "./component/UserDetails";
+// import { Login } from "@mui/icons-material";
+// const [data] = useFetch('https://hub.dummyapis.com/employee?noofRecords=100&idStarts=1001') ;
 // import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom';
 // import CompA from "./component/CompA";
 
-import React, { useReducer, useEffect, useState, useMemo, useCallback } from "react";
+import CompI from "./component/CompI";
+import React, { useReducer, useEffect, useState, useMemo, useCallback, Component } from "react";
 import './App.css';
 import Login from './component/Login';
 import Header from "./component/Header";
 import axios from "axios";
 import useFetch from "./component/useFetch";
 import Todos from "./component/Todos";
-import { TailSpin , MagnifyingGlass } from "react-loader-spinner";
-// import { Login } from "@mui/icons-material";
-// const [data] = useFetch('https://hub.dummyapis.com/employee?noofRecords=100&idStarts=1001') ;
-{/* <Login /> */ }
+import { TailSpin, MagnifyingGlass } from "react-loader-spinner";
+import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { Inc, Dec } from "./states/reducers";
 
 export default function App() {
 
+  const curState = useSelector((state) => state.number);
+  const dispatch = useDispatch();
+
   return (
     <>
-      Helli world!!
+      <Login />
     </>
-  )  
-
-};
-
+  )
+}
 
 
 
@@ -42,6 +46,21 @@ export default function App() {
 
 
 
+
+
+{/* <h1>Hello world!!</h1>
+      <div
+        style={{
+          width: "100%", display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column"
+        }}
+      >
+        <h1> {curState} </h1>
+        <button onClick={() => dispatch(Inc(10)) } >INC</button>
+        <button onClick={() => dispatch(Dec(5)) } >DEC</button>
+      </div> */}
 
 // const [loading, setLoading] = useState(false);
 //   const [data , setData] = useState([]);
