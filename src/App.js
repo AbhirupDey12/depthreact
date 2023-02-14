@@ -8,41 +8,47 @@
 // import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom';
 // import CompA from "./component/CompA";
 
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect, useState } from "react";
 import './App.css';
+import Login from './component/Login' ;
 import Header from "./component/Header";
+import axios from "axios";
+import useFetch from "./component/useFetch";
+// import { Login } from "@mui/icons-material";
+// const [data] = useFetch('https://hub.dummyapis.com/employee?noofRecords=100&idStarts=1001') ;
+{/* <Login /> */}
 
-const reducer = ( state , action ) => {
+export default function App() {
   
-  if(action.type === "INC") {
-    return state + 1 ;
+  const [count, setCount] = useState(0) ;
+  const [name , setName] = useState("") ;
+
+  const expensiveCalculation = (num) => {
+    for(let i = 0 ; i < 10000000000000; i++) {
+      return num ;
+    }
   }
-  else if(action.type === "DEC") {
-    return state - 1 ;
-  }
-  else if(action.type === "MUL") {
-    return state * 2 ;
-  }
-  else {
-    return state ;
-  }
+
+  const calculation = expensiveCalculation(count) ;
+  
+  return (
+
+    <>
+
+      <Header />
+
+      <button onClick={() => setCount(count + 1)} >Increment</button>
+      <h1>Count : {count}</h1>
+
+      <input type="text" onChange={(e) => setName(e.target.value)}  />
+      <h1>Name : {name} </h1>
+
+    </>
+
+  );
 
 } ;
 
-export default function App() {
-
-  const [ state , dispatch ] = useReducer(reducer , 0 ) ;
-
-  return (
-    <>
-        <Header />
-        <h1>{state}</h1>
-        <button onClick={ () => dispatch( { type : "INC" } ) } > Increment </button>
-        <button onClick={ () => dispatch( { type : "DEC" } ) } > Decrement </button>
-        <button  onClick={ () => dispatch( { type : "MUL" } ) }  > Multiplication </button>
-    </>
-  )
-};
 
 
 
@@ -65,6 +71,57 @@ export default function App() {
 
 
 
+
+
+
+
+
+
+{/* <Header />
+      {
+        data.map((ele) => {
+          return (
+            <div key={ele.id} style={{border : "1px solid black"}} >
+              <p>{ele.id}</p>
+              <p>{ele.firstName}</p>
+              <p>{ele.address}</p>
+            </div>
+          );
+        })
+      } */}
+
+
+
+// const reducer = ( state , action ) => {
+// if(action.type === "INC") {
+//   return state + 1 ;
+// }
+// else if(action.type === "DEC") {
+//   return state - 1 ;
+// }
+// else if(action.type === "MUL") {
+//   return state * 2 ;
+// }
+// else {
+//   return state ;
+// }
+// };
+
+// } ;
+
+// export default function App() {
+
+// const [ state , dispatch ] = useReducer(reducer , 0 ) ;
+
+// return (
+//   <>
+//       <Header />
+//       <h1>{state}</h1>
+//       <button onClick={ () => dispatch( { type : "INC" } ) } > Increment </button>
+//       <button onClick={ () => dispatch( { type : "DEC" } ) } > Decrement </button>
+//       <button  onClick={ () => dispatch( { type : "MUL" } ) }  > Multiplication </button>
+//   </>
+// )
 
 // const [input, setInput] = useState("") ;
 //   const [count, setCount] = useState(0) ;
