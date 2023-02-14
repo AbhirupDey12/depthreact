@@ -15,6 +15,7 @@ import Header from "./component/Header";
 import axios from "axios";
 import useFetch from "./component/useFetch";
 import Todos from "./component/Todos";
+import { TailSpin , MagnifyingGlass } from "react-loader-spinner";
 // import { Login } from "@mui/icons-material";
 // const [data] = useFetch('https://hub.dummyapis.com/employee?noofRecords=100&idStarts=1001') ;
 {/* <Login /> */ }
@@ -23,20 +24,72 @@ export default function App() {
 
   return (
     <>
-      Hello world!
+      Helli world!!
     </>
-  )
+  )  
 
 };
 
 
 
 
-{/* Here , we are basically passing the function and at the same time we are also passing the function to add the todo */}
 
 
 
- 
+
+
+
+
+
+
+
+// const [loading, setLoading] = useState(false);
+//   const [data , setData] = useState([]);
+
+//   useEffect(() => {
+//     setLoading(true) ;
+//     axios.get('https://dummyjson.com/products')
+//       .then((res) => {
+//         setData(res.data.products) ;
+//         setLoading(false) ;
+//         console.log(res.data.products) ;
+//       })
+//       .catch((err) => {
+//         console.log(err) ;
+//       }) ;
+//   } , [] ) ;
+
+//   return (
+//     <>
+//       <Header />
+//       <div className="main">
+//         {/* <TailSpin /> */}
+//         {
+//           loading 
+//           ?
+//           <TailSpin className="tail" />
+//           :
+//           data.map((ele) => {
+//             return (
+//               <div key={ele.id}>
+//                 <img src={`${ele.thumbnail}`} alt="" />
+//                 <p>{ele.brand}</p>
+//                 <p>{ele.category}</p>
+//                 <p>{ele.price}</p>
+//                 <p>{ele.stock}</p>
+//               </div>
+//             )
+//           })
+//         }
+//       </div>
+//     </>
+//   )
+
+{/* Here , we are basically passing the function and at the same time we are also passing the function to add the todo */ }
+
+
+
+
 // const [count, setCount] = useState(0);
 // const [todos, setTodos] = useState([]);
 
