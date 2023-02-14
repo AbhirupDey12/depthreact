@@ -8,51 +8,65 @@
 // import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom';
 // import CompA from "./component/CompA";
 
-import React, { useReducer, useEffect, useState } from "react";
+import React, { useReducer, useEffect, useState, useMemo, useCallback } from "react";
 import './App.css';
-import Login from './component/Login' ;
+import Login from './component/Login';
 import Header from "./component/Header";
 import axios from "axios";
 import useFetch from "./component/useFetch";
+import Todos from "./component/Todos";
 // import { Login } from "@mui/icons-material";
 // const [data] = useFetch('https://hub.dummyapis.com/employee?noofRecords=100&idStarts=1001') ;
-{/* <Login /> */}
+{/* <Login /> */ }
 
 export default function App() {
-  
-  const [count, setCount] = useState(0) ;
-  const [name , setName] = useState("") ;
 
-  const expensiveCalculation = (num) => {
-    for(let i = 0 ; i < 10000000000000; i++) {
-      return num ;
-    }
-  }
-
-  const calculation = expensiveCalculation(count) ;
-  
   return (
-
     <>
-
-      <Header />
-
-      <button onClick={() => setCount(count + 1)} >Increment</button>
-      <h1>Count : {count}</h1>
-
-      <input type="text" onChange={(e) => setName(e.target.value)}  />
-      <h1>Name : {name} </h1>
-
+      Hello world!
     </>
+  )
 
-  );
-
-} ;
-
+};
 
 
 
 
+{/* Here , we are basically passing the function and at the same time we are also passing the function to add the todo */}
+
+
+
+ 
+// const [count, setCount] = useState(0);
+// const [todos, setTodos] = useState([]);
+
+// const increment = () => {
+//   setCount((c) => c + 1);
+// }
+
+// const addTodo = useCallback((num) => {
+//   setTodos( (t) => [...t, `New Todo ${num}`] );
+// }, [todos]);
+
+// return (
+
+//   <>
+
+//     <Header />
+
+//     <div>
+//       <button onClick={increment} >+</button> <br />
+//       Count : {count}
+//     </div>
+
+//     <hr />
+
+//     <Todos todos={todos} addTodo={addTodo} />
+
+
+//   </>
+
+// )
 
 
 
@@ -71,10 +85,34 @@ export default function App() {
 
 
 
+// const [count, setCount] = useState(0);
+//   const [name, setName] = useState("");
 
+//   const expensiveCalculation = (num) => {
+//     for (let i = 0; i < 10000000000000; i++) {
+//       return num;
+//     }
+//   }
 
+//   const calculation = useMemo(() => {
+//     expensiveCalculation(count);
+//   }, [count]);
 
+//   return (
 
+//     <>
+
+//       <Header />
+
+//       <button onClick={() => setCount(count + 1)} >Increment</button>
+//       <h1>Count : {count}</h1>
+
+//       <input type="text" onChange={(e) => setName(e.target.value)} />
+//       <h1>Name : {name} </h1>
+
+//     </>
+
+//   );
 
 
 {/* <Header />
