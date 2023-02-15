@@ -13,7 +13,6 @@
 import CompI from "./component/CompI";
 import React, { useReducer, useEffect, useState, useMemo, useCallback, Component } from "react";
 import './App.css';
-import Login from './component/Login';
 import Header from "./component/Header";
 import axios from "axios";
 import useFetch from "./component/useFetch";
@@ -22,18 +21,77 @@ import { TailSpin, MagnifyingGlass } from "react-loader-spinner";
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
 import { Inc, Dec } from "./states/reducers";
+import Login from './component/Login';
+import Nav from './component/Nav';
+{/* <Login /> */ }
 
-export default function App() {
+export default class App extends Component {
 
-  const curState = useSelector((state) => state.number);
-  const dispatch = useDispatch();
+  // Initialization is done by constructer
+  constructor(props) {
+    super(props)
 
-  return (
-    <>
-      <Login />
-    </>
-  )
+    this.state = {
+      show: true
+    }
+    console.log("inside constructor");
+  }
+
+  // when all the things have been painted on the page 
+  // componentDidMount() {
+  //   console.log("componentDidMount");
+  // }
+
+  // handleToggle = () => {
+  //   this.setState({
+  //     show : !this.state.show
+  //   })
+  // }
+
+  componentDidMount() {
+    console.log("componentDidMount");
+    this.setState({
+      show : !this.state.show
+    })
+  }
+
+
+  render() {
+    console.log("Render");
+    return (
+      <div>
+        {/* <h1>
+          Life Cycle Method
+        </h1>
+        {
+          this.state.show ? <Nav /> : ""
+        }
+        <button onClick={this.handleToggle} >Toggle NavBar</button> */}
+        <h1>
+          Component Did Mount LifeCycle Method
+        </h1>
+      </div>
+    )
+  }
+
 }
+
+
+
+
+
+
+
+// export default function App() {
+
+
+//   return (
+//     <>
+//       Hello world!
+//     </>
+//   ) ;
+
+// } ;
 
 
 
@@ -49,8 +107,10 @@ export default function App() {
 
 
 {/* <h1>Hello world!!</h1>
-      <div
-        style={{
+<div
+style={{
+          // const curState = useSelector((state) => state.number);
+          // const dispatch = useDispatch();
           width: "100%", display: "flex",
           justifyContent: "center",
           alignItems: "center",
