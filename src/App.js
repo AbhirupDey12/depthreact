@@ -23,59 +23,229 @@ import { useDispatch } from 'react-redux';
 import { Inc, Dec } from "./states/reducers";
 import Login from './component/Login';
 import Nav from './component/Nav';
-{/* <Login /> */ }
+import Head from "./Header/Head";
+{/* <Head /> */ }
+
 
 export default class App extends Component {
 
-  // Initialization is done by constructer
   constructor(props) {
     super(props)
-
+  
     this.state = {
-      show: true
+       isLogIn : false 
     }
-    console.log("inside constructor");
   }
 
-  // when all the things have been painted on the page 
-  // componentDidMount() {
-  //   console.log("componentDidMount");
-  // }
-
-  // handleToggle = () => {
-  //   this.setState({
-  //     show : !this.state.show
-  //   })
-  // }
-
-  componentDidMount() {
-    console.log("componentDidMount");
+  changeStatus = () => {
     this.setState({
-      show : !this.state.show
+      isLogIn : !this.state.isLogIn
     })
   }
 
-
   render() {
-    console.log("Render");
     return (
-      <div>
-        {/* <h1>
+      <>
+        {
+          this.state.isLogIn === false ? <Login status={this.changeStatus} /> : <Head  status={this.changeStatus}  />
+        }
+      </>
+    )
+  }
+
+}
+
+
+// Initialization is done by constructer
+// constructor(props) {
+//   super(props)
+
+//   this.state = {
+//     show: false
+//   }
+//   console.log("inside constructor");
+// }
+
+// when all the things have been painted on the page 
+// componentDidMount() {
+//   console.log("componentDidMount");
+// }
+
+// handleToggle = () => {
+//   this.setState({
+//     show : !this.state.show
+//   })
+// }
+
+// componentDidMount() {
+//   console.log("componentDidMount");
+// }
+// console.log("Render");
+
+
+// constructor(props) {
+//   super(props)
+
+//   this.state = {
+//     count: 0
+//   }
+// }
+
+// componentDidUpdate(pP, pS, sS) {
+// console.log("method called", pP , this.props.data );
+// if(pS.count == this.state.count ) {
+//   console.log("Match") ;
+// }
+// if (pS.count < 3) {
+//   this.setState({ count: this.state.count + 1 })
+// }
+// console.log(pP) ;
+// }
+
+// render() {
+//   return (
+//     <div>
+//       <h1>Component Did Update Lifecycle Method</h1>
+//       <Child data={this.state.count} />
+//       <button
+//         onClick={
+//           () => {
+//             this.setState({ count: this.state.count + 1 })
+//           }}
+//       >
+//         Update counter : {this.state.count}
+//       </button>
+//     </div>
+//   )
+// }
+// export default class App extends Component {
+
+//   constructor(props) {
+//     super(props)
+
+//     this.state = {
+//       data: 0 ,
+//       number : 100
+//     }
+//   }
+
+//   forceUpdateStateHandler = () => {
+//     console.log("Function callinf forced update method")
+//     this.forceUpdate( () => {
+//       console.log("Inside the force Update method") ;
+//     } )
+//   }
+
+//   render() {
+//     return (
+//       <div>
+
+//         <h1> ForceUpdate </h1>
+
+//         <h2>
+//             Generate Random Number
+//         </h2>
+
+//         <h4>
+//           Random Numbers: { Math.random()}
+//         </h4>
+
+//         <h3>Number :- { Math.random() * this.state.number }</h3>
+
+//         <button onClick={this.forceUpdateStateHandler} > ForceUpdate </button>
+
+//       </div>
+//     )
+//   }
+
+// }
+
+
+// class Child extends Component {
+
+//   constructor(props) {
+{/* <Child /> */ }
+//     super(props)
+
+//     this.state = {
+//       data: 1
+//     }
+//   }
+
+// componentDidUpdate(props, state , snapshot) {
+//   console.log( "componentDidUpdate" , props , state , snapshot ) ;
+
+// }
+
+// getSnapshotBeforeUpdate(pP , pS) {
+//   return pS.currentVal * 10 ;
+// }
+
+// static getDerivedStateFromProps(props , state) {
+//     console.log(props, state) ;
+//     return {
+//       currentVal : props.data * 10
+//     };
+// }
+
+// shouldComponentUpdate(pP, pS) {
+//     // console.log(pS) ;
+//     if(pS.data !== this.state.data) {
+//       return true ;
+//     } else {
+//       return false ;
+//     }
+// }
+
+// render() {
+//   console.log("Inside render")
+//   return (
+//     <div>
+{/* //   <h1>
+      //     {this.state.currentVal}
+      //   </h1>
+      //   <button onClick={() => this.setState({ currentVal : this.state.currentVal + 1 }) } >Update State</button> */}
+//         <h1>Child Component {this.state.data} </h1>
+//         <button
+//           onClick={() => this.setState({
+//             data: this.state.data + 1
+//           })}
+//         > Update State </button>
+//       </div>
+//     )
+//   }
+
+// }
+
+{/* <h1>
           Life Cycle Method
         </h1>
         {
           this.state.show ? <Nav /> : ""
         }
         <button onClick={this.handleToggle} >Toggle NavBar</button> */}
-        <h1>
-          Component Did Mount LifeCycle Method
+{/* <h1>
+          Component Will Unmount Lifecycle method
         </h1>
-      </div>
-    )
-  }
+        {
+          this.state.show ? <Child /> : ""
+        }
+        <button onClick={this.handleToggle} >Toggle Child</button> */}
+// class Child extends Component {
 
-}
+//   componentWillUnmount() {
+//     console.log("Child componentWillUnmount") ;
+//   }
 
+//   render() {
+//     return (
+//       <div>
+//         <h3>Child Component</h3>
+//       </div>
+//     )
+//   }
+
+// }
 
 
 

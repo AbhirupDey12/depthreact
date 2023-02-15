@@ -11,10 +11,13 @@
 }
 
 .form {
-     min-height: 40vh;
+     min-height: 55vh;
      min-width: 45vw;
      /* border: 1px solid black; */
-     padding: 0.8rem;
+     color: #282a35;
+     font-weight: 700;
+     margin: 0;
+     padding: 48px;
      display: flex;
      flex-direction: column;
      justify-content: space-between;
@@ -22,10 +25,20 @@
      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.email_box ,
+.heading {
+     color: #282a35;
+     font-size: 29px;
+     font-weight: 700;
+     margin: 0;
+}
+
+.email_box,
 .password_box {
      width: 100%;
      text-align: left;
+     font-size: 16px;
+     font-weight: 600;
+     margin: 30px 0 0;
 }
 
 .email_box input,
@@ -33,19 +46,31 @@
      width: 100%;
      margin: 0.4rem 0;
      padding: 0.3rem;
+     background-color: #fff;
+     border: 1px solid #ced4da;
+     border-radius: 4px;
+     box-sizing: border-box;
+     margin: 6px 0;
+     padding: 14px;
 }
 
 .email_box input:focus,
 .password_box input:focus {
      border: none;
-     /* outline: none; */
+     background-color: #fff;
+     border: 1px solid #ced4da;
+     border-radius: 4px;
+     box-sizing: border-box;
+     margin: 6px 0;
+     padding: 14px;
 }
 
 .btnn {
      border: none;
      padding: 0.8rem;
-     border-radius: 0.4rem;
-     background-color: rgb(197, 162, 97);
+     border-radius: 25px;
+     color: #fff;
+     background-color: #04aa6d;
      font-size: 1rem;
      font-weight: bold;
      cursor: pointer;
@@ -55,15 +80,6 @@
 .btnn:active {
      background-color: blue;
      color: white;
-}
-
-.tail {
-     width: 100vw;
-     height: 90vh;
-     display: flex;
-     display: flex;
-     justify-content: center;
-     align-items: center;
 }
 
 @media screen and (max-width: 1700px) {

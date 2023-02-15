@@ -13,26 +13,28 @@ export default class Login extends Component {
 
      mailHandler = (e) => {
           this.setState({
-               email : e.target.value 
+               email: e.target.value
           })
      }
 
      passwordHandler = (e) => {
           this.setState({
-               password : e.target.value 
+               password: e.target.value
           })
      }
 
      submitHandler = (e) => {
-          if(this.state.email === "" || this.state.password === "") {
-               alert("You have to enter both e-mail and password") ;
+          if (this.state.email === "" || this.state.password === "") {
+               alert("You have to enter both e-mail and password");
+               // this.props.status = false ;
           }
           else {
-               alert(`Hello user, your email is ${this.state.email} and your password is ${this.state.password}`) ;
+               alert(`Hello user, your email is ${this.state.email} and your password is ${this.state.password}`);
                this.setState({
-                    password : ""  ,
-                    email : ""
-               })
+                    password: "",
+                    email: ""
+               });
+               this.props.status();
           }
      }
 
