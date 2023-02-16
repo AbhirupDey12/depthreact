@@ -10,7 +10,7 @@ export default class Head extends Component {
                     <div className="head_container_1">
 
                          <div className="image_container ">
-                              <img src="https://play-lh.googleusercontent.com/y3eaXRp7E7JfproxFtRIf60pVkmgcPNCxIhx_P7Ith_u3jZufHLnZspbc0bC3t2k5A" alt="image" />
+                              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/W3Schools_logo.svg/1200px-W3Schools_logo.svg.png" alt="pho" />
                          </div>
 
                          <div className="common_container_1">
